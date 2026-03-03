@@ -9,7 +9,9 @@ int main(){
         printf("\n====== LIBRARY MANAGEMENT SYSTEM =====\n");
         printf("1. Add Book\n");
         printf("2. Display All Book\n");
-        printf("3. EXit\n");
+        printf("3. Search a Book\n");
+        printf("4. Delete a Book\n");
+        printf("5. EXit\n");
         printf("===========================================\n");
         printf("Enter your choice");
         scanf("%d",&choice);
@@ -18,6 +20,10 @@ int main(){
         }else if(choice==2){
             displaybooks(library,count);
         }else if(choice==3){
+            searchbook(library,count);
+        }else if(choice==4){
+            deletebook(library,&count);
+        }else if(choice==5){
             printf("Goodbye!\n");
             break;
         }else{
