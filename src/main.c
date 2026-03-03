@@ -11,7 +11,9 @@ int main(){
         printf("2. Display All Book\n");
         printf("3. Search a Book\n");
         printf("4. Delete a Book\n");
-        printf("5. EXit\n");
+        printf("5. Issue Book\n");
+        printf("6. Return Book\n");
+        printf("7. EXit\n");
         printf("===========================================\n");
         printf("Enter your choice");
         scanf("%d",&choice);
@@ -24,6 +26,10 @@ int main(){
         }else if(choice==4){
             deletebook(library,&count);
         }else if(choice==5){
+            issuebook(library,count);
+        }else if(choice==6){
+           returnbook(library,count);
+        }else if(choice==7){
             printf("Goodbye!\n");
             break;
         }else{
