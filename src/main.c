@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include <string.h>
 #include "../include/library.h"
+#include "../include/file.h"
 int main(){
     struct Book library[MAX_BOOK];
     int count=0;
     int choice;
+    
+    memset(library,0,sizeof(library));
+    loadbooks(library,&count);
 
     while(1){
         printf("\n====== LIBRARY MANAGEMENT SYSTEM =====\n");
@@ -17,19 +22,25 @@ int main(){
         printf("===========================================\n");
         printf("Enter your choice");
         scanf("%d",&choice);
+        getchar();
         if(choice==1){
             addBook(library,&count);
+            savebooks(library,count);
         }else if(choice==2){
             displaybooks(library,count);
         }else if(choice==3){
             searchbook(library,count);
         }else if(choice==4){
             deletebook(library,&count);
+            savebooks(library,count);
         }else if(choice==5){
             issuebook(library,count);
+            savebooks(library,count);
         }else if(choice==6){
            returnbook(library,count);
+           savebooks(library,count);
         }else if(choice==7){
+            savebooks(library,count);
             printf("Goodbye!\n");
             break;
         }else{
