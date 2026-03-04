@@ -2,7 +2,11 @@
 #include <string.h>
 #include "../include/library.h"
 #include "../include/file.h"
+#include "../include/auth.h"
 int main(){
+    if(!login()){
+        return 0; //exit if login failed
+    }
     struct Book library[MAX_BOOK];
     int count=0;
     int choice;
